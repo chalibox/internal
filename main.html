@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Charlie">
+    <meta name="description" content="WUXIA FACT">
+    <meta name="keywords" content="wuxia, chinese swords">
+    <meta name="robots" content="nofollow">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".menu").click(function() {
+                $(this).parent().toggleClass("close");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $.fn.commentCards = function() {
+
+                return this.each(function() {
+
+                    var $this = $(this),
+                        $cards = $this.find('.card'),
+                        $current = $cards.filter('.card--current'),
+                        $next;
+
+                    $cards.on('click', function() {
+                        if (!$current.is(this)) {
+                            $cards.removeClass('card--current card--out card--next');
+                            $current.addClass('card--out');
+                            $current = $(this).addClass('card--current');
+                            $next = $current.next();
+                            $next = $next.length ? $next : $cards.first();
+                            $next.addClass('card--next');
+                        }
+                    });
+
+                    if (!$current.length) {
+                        $current = $cards.last();
+                        $cards.first().trigger('click');
+                    }
+
+                    $this.addClass('cards--active');
+
+                })
+
+            };
+
+            $('.cards').commentCards();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
+    <title>WUXIA FACT</title>
+</head>
+
+<body>
+    <main class="wrapper">
+        <div class="parallax" id="first_section">
+            <div class="base">
+                <div class="menu">
+                    <div class="icon">
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="icons">
+                    <i class="fa fa-user" aria-hidden="true">Info</i>
+                    <i class="fa fa-calendar-o" aria-hidden="true">Home</i>
+                    <i class="fa fa-tachometer" aria-hidden="true">3D</i>
+                </div>
+                <div class="section">
+                    <div class="cover1">
+                        <div class="cover2">
+                            <a class="content" href="#1"></a>
+                        </div>
+                    </div>
+                </div>
+                <a class="section-static top" href="#3"></a>
+                <a class="section-static bottom" href="#2"></a>
+            </div>
+            <div>
+                <span><a name ="1">Wuxia</a> World</span>
+            </div>
+            <div class="container">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <span class="text">Scroll down</span>
+            </div>
+        </div>
+        <div class="section static">
+            <h1><a name="2">How the model is made</a></h1>
+            <p>Taoists believe that for some people, they can breath in a special way which will cause a special form of energy called reki to build up in their body. Once the amount of reki in their body is large enough, even normal humans can become immortal. To become like a god.Taoists call those people the immortals. The sword on the left forms when immortals put their reki onto a normal metal sword, the more reki they put in, the more powerful the sword is.<br>That was obviously just a joke. The sword on the left is made with blender. The benefit of using blender is that it can create realistic models unlike Tilt brush which you can only use it for drawing. </p>
+            <div class="sketchfab-embed-wrapper"><iframe src="https://sketchfab.com/models/d7e8d40a4a124de4b1aabd7ce49cbc66/embed?autostart=1"></iframe>
+            </div>
+
+        </div>
+        <div class="parallax2">
+            <div class="title">
+                <h1><a name="3">The Wuxia World</a></h1>
+            </div>
+            <ul class="cards">
+
+                <li class="card">
+                    <h1>Background</h1>
+
+                    <p>Wuxia, from mandarin 武俠, which literally means "martial heroes", is a genre of Chinese fiction concerning the adventures of martial artists in ancient China. Although wuxia is traditionally a form of fantasy literature, its popularity has caused it to spread to diverse art forms such as Chinese opera, mànhuà, films, television series and video games. It forms part of popular culture in many Chinese-speaking communities around the world.</p>
+                </li>
+                <li class="card">
+                    <h1>Meaning</h1>
+
+                    <p>The word "wǔxiá" is a compound composed of the elements wǔ (武, literally "martial", "military", or "armed") and xiá (俠, literally "chivalrous", "vigilante" or "hero"). A martial artist who follows the code of xia is often referred to as a xiákè (俠客, literally "follower of xia") or yóuxiá (遊俠, literally "wandering xia"). In some translations, the martial artist is referred to as a "swordsman" or "swordswoman" even though he or she may not necessarily wield a sword. Modern wuxia stories are largely set in ancient or pre-modern China.</p>
+                </li>
+                <li class="card">
+                    <h1>Setting</h1>
+
+                    <p>A typical wuxia story features a young male protagonist who experiences a tragedy – such as the loss of his loved ones – and goes on to undertake several trials and tribulations to learn several forms of martial arts from various fighters. At the end of the story, he emerges as a powerful fighter whom few can equal. He uses his abilities to follow the code of xia and mends the ills of the jianghu. For instance, the opening chapters of some of Jin Yong's works follow a certain pattern: a tragic event occurs, usually one that costs the lives of the newly introduced characters, and then it sets events into motion that will culminate in the primary action of the story.</p>
+
+                </li>
+                <li class="card">
+                    <h1>History</h1>
+
+                    <p>The historical setting can range from being quite specific and important to the story, to being vaguely-defined, anachronistic, or mainly for use as a backdrop. Elements of fantasy, such as the use of magic powers and appearance of supernatural beings, are common in some wuxia stories but are not a prerequisite of the wuxia genre. However, the martial arts element is a definite part of a wuxia tale, as the characters must know some form of martial arts. Themes of romance are also strongly featured in some wuxia tales.</p>
+
+                </li>
+            </ul>
+
+        </div>
+        <div class="section static2">
+
+            <div class="wrapper1">
+                <ul>
+                    <li class="facebook"><i class="fa fa-facebook fa-2x" aria-hidden="true">S</i></li>
+                    <li class="twitter"><i class="fa fa-twitter fa-2x" aria-hidden="true">H</i></li>
+                    <li class="instagram"><i class="fa fa-instagram fa-2x" aria-hidden="true">A</i></li>
+                    <li class="google"><i class="fa fa-google fa-2x" aria-hidden="true">R</i></li>
+                    <li class="whatsapp"><i class="fa fa-whatsapp fa-2x" aria-hidden="true">E</i></li>
+                </ul>
+            </div>
+            <div class="footer">
+                <p>Created by Charlie ©2018. All share links won't work because of legal issues</p>
+            </div>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

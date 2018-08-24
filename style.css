@@ -1,0 +1,757 @@
+body .parallax {
+    /* The image used */
+    background-image: url("images/ancient-architecture-asia-734102.jpg");
+    overflow-x: hidden;
+    /* Set a specific height */
+    height: 80vw;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+body .base {
+    z-index: 90;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    width: 98px;
+    height: 98px;
+    transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+    border-bottom-right-radius: 100%;
+}
+
+body .base .menu {
+    z-index: 100;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    border-bottom-right-radius: 200px;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1), background-color 1s ease;
+}
+
+body .base .menu .icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%);
+}
+
+body .base .menu .icon:before,
+body .base .menu .icon:after {
+    content: '';
+    transform: rotate(0deg);
+    transition: top 0.5s ease 0.5s, transform 0.5s ease, background-color 0.75s ease 0.25s;
+}
+
+body .base .menu .icon .bar,
+body .base .menu .icon:before,
+body .base .menu .icon:after {
+    position: absolute;
+    height: 5px;
+    left: 0px;
+    right: 0px;
+    border-radius: 5px;
+    background-color: steelblue;
+}
+
+body .base .menu .icon .bar {
+    transition: opacity 0s linear 0.5s, background-color 0.75s ease 0.25s;
+    opacity: 1;
+    top: 10px;
+}
+
+body .base .menu .icon:before {
+    top: 0px;
+}
+
+body .base .menu .icon:after {
+    top: initial;
+    top: 20px;
+}
+
+body .base .icons {
+    z-index: 98;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+body .base .icons > * {
+    position: absolute;
+    font-size: 40px;
+    color: steelblue;
+    transition: 0.3s cubic-bezier(0.5, -0.25, 0.05, 1);
+}
+
+body .base .icons .fa-user {
+    top: 35px;
+    left: 0px;
+    transition-delay: 0.2s;
+}
+
+body .base .icons .fa-calendar-o {
+    top: 0px;
+    left: 0px;
+    color: #fff;
+    transition-delay: 0.1s;
+}
+
+body .base .icons .fa-tachometer {
+    top: 0px;
+    left: 0px;
+}
+
+body .base .section {
+    z-index: 96;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 0px;
+    width: 0px;
+    transform-origin: 100% 100%;
+    transform: rotate(135deg);
+}
+
+body .base .section .cover1 {
+    transform-origin: 100% 100%;
+}
+
+body .base .section .cover1,
+body .base .section .cover1 .cover2,
+body .base .section .cover1 .cover2 .content {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+}
+
+body .base .section .cover1,
+body .base .section .cover1 .cover2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%) rotate(4deg);
+    overflow: hidden;
+    pointer-events: none;
+    transition: transform 0.5s ease-in;
+}
+
+body .base .section .cover1 .cover2 {
+    transform: translate(50%, -50%) rotate(-8deg);
+    transform-origin: 0% 100%;
+}
+
+body .base .section .cover1 .cover2 .content {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background-color: #ee1b59;
+    top: 100%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0s, width 1.5s cubic-bezier(0.5, -0.5, 0.05, 1) 0s, height 1.5s cubic-bezier(0.5, -0.5, 0.05, 1) 0s;
+    pointer-events: auto;
+}
+
+body .base .section-static {
+    z-index: 94;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: 0% 0%;
+    transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1), height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+}
+
+body .base .section-static:hover {
+    background-color: #eaeaea;
+}
+
+body .base .section-static.top {
+    transform: rotate(-45deg);
+    border-bottom-right-radius: 400px;
+}
+
+body .base .section-static.bottom {
+    transform: rotate(45deg);
+    border-bottom-right-radius: 400px;
+}
+
+body .base.close {
+    width: 300px;
+    height: 300px;
+    transition: all 1.25s cubic-bezier(0.5, 0, 0.05, 1.75);
+}
+
+body .base.close .menu {
+    width: 150px;
+    height: 150px;
+    transition: all 1s cubic-bezier(0.5, 0, 0.05, 1.75), background-color 1s ease;
+    background-color: steelblue;
+}
+
+body .base.close .menu .icon .bar,
+body .base.close .menu .icon:before,
+body .base.close .menu .icon:after {
+    background-color: antiquewhite;
+}
+
+body .base.close .menu .icon .bar {
+    opacity: 0;
+}
+
+body .base.close .menu .icon:before,
+body .base.close .menu .icon:after {
+    transition: top 0.5s linear, transform 0.5s ease 0.5s, background-color 0.75s ease 0.25s;
+}
+
+body .base.close .menu .icon:before {
+    top: 10px;
+    transform: rotate(-45deg);
+}
+
+body .base.close .menu .icon:after {
+    top: 10px;
+    transform: rotate(45deg);
+}
+
+body .base.close .icons {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+body .base.close .icons > * {
+    position: absolute;
+    font-size: 20px;
+    color: #21264b;
+    transition: 0.3s cubic-bezier(0.5, 0, 0.05, 1.75) 0.7s;
+    pointer-events: none;
+}
+
+body .base.close .icons .fa-user {
+    top: 35px;
+    left: 180px;
+}
+
+body .base.close .icons .fa-calendar-o {
+    top: 141px;
+    left: 141px;
+    color: #fff;
+    transition-delay: 0.65s;
+}
+
+body .base.close .icons .fa-tachometer {
+    top: 200px;
+    left: 35px;
+    transition-delay: 0.8s;
+}
+
+body .base.close .section .cover1 {
+    transform-origin: 100% 100%;
+}
+
+body .base.close .section .cover1,
+body .base.close .section .cover1 .cover2,
+body .base.close .section .cover1 .cover2 .content {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+}
+
+body .base.close .section .cover1,
+body .base.close .section .cover1 .cover2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%) rotate(16deg);
+    overflow: hidden;
+    transition: transform 0.5s ease-in 0.5s;
+}
+
+body .base.close .section .cover1 .cover2 {
+    transform: translate(50%, -50%) rotate(-32deg);
+    transform-origin: 0% 100%;
+}
+
+body .base.close .section .cover1 .cover2 .content {
+    border-radius: 100%;
+    background-color: rosybrown;
+    top: 100%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0s, width 1.1s cubic-bezier(0.5, 0, 0.05, 1.75) 0.25s, height 1.1s cubic-bezier(0.5, 0, 0.05, 2) 0.25s;
+}
+
+body .base.close .section .cover1 .cover2 .content:hover {
+    background-color: #eaeaea;
+}
+
+body .base.close .section-static {
+    width: 300px;
+    height: 300px;
+    transition: width 1.25s cubic-bezier(0.5, 0, 0.05, 2), height 1.25s cubic-bezier(0.5, 0, 0.05, 2);
+}
+
+iframe {
+    margin-top: 7vw;
+    margin-bottom: 30px;
+    margin-left: 46vw;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    width: 45vw;
+    height: 35vw;
+    -moz-box-shadow: 9px 9px 19px #000;
+    -webkit-box-shadow: 9px 9px 19px #000;
+    box-shadow: 9px 9px 19px #000;
+    border: none;
+    -moz-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    -o-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=.2);
+    resize: both;
+    overflow: auto;
+}
+
+.static {
+    background-image: url("images/green-tea-2356770_1920.jpg");
+    height: 50vw;
+    width: 100%;
+}
+
+.parallax2 {
+    background-image: url("images/chinese-lantern-455760_1920.jpg");
+    height: 70vw;
+    overflow-x: hidden;
+    width: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.static2 {
+    background-image: url("images/the-evening-sun-1550203.jpg");
+    height: 26vw;
+    width: 100%;
+}
+
+span {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(calc(-50% - 12px), calc(-50% + 12px), 0);
+    mix-blend-mode: screen;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    letter-spacing: 2vw;
+    text-transform: uppercase;
+    text-shadow: 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white, 0vw 0vw white;
+    opacity: 0;
+    animation: revolve 2s cubic-bezier(0.47, 0.01, 0, 1.01) forwards 0.5s;
+}
+
+@keyframes revolve {
+    to {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+        text-shadow: -2px 1px white, -3px 2px white, -4px 3px white, -5px 4px white, -6px 5px white, -7px 6px white, -8px 7px white, -9px 8px white, -10px 9px white, -11px 10px white, -12px 11px white;
+    }
+}
+
+h1 {
+    position: absolute;
+    text-align: right;
+    left: 5%;
+    color: #fff;
+    font-family: Arvo;
+    font-weight: bold;
+    text-shadow: -0.1vw -0.1vw 0 #222,
+    0.33vw -0.3vw 0 #222,
+    -0.3vw 0.3vw 0 #222,
+    0.3vw 0.3vw 0 #222,
+    0.4vw 0.4vw 0 #fff,
+    0.5vw 0.5vw 0 #fff,
+    0.6vw 0.6vw 0 #fff,
+    0.7vw 0.7vw 0 #fff;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    font-size: 3vw;
+
+}
+
+p {
+    position: absolute;
+    left: 2%;
+    right: 57%;
+    top: 85vw;
+    color: steelblue;
+    font-size: 1.8vw;
+    padding: 8px 12px;
+    font-family: 'Aclonica';
+    text-shadow: -0.05vw 0 black, 0 0.05vw black, 0.05vw 0 black, 0 -0.05vw black;
+}
+
+.container {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 170%;
+}
+
+.chevron {
+    position: absolute;
+    width: 2vw;
+    height: 0.5vw;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+    margin-left: -1vw;
+    top: 45vw;
+    padding: 0.1vw;
+    margin-top: 1vw;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0vw;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+
+}
+
+.chevron:before {
+    left: 0vw;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0vw;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.text {
+    display: block;
+    margin-top: 5vw;
+    margin-left: 8px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 1vw;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+    top: 47vw;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}
+
+.title h1 {
+    position: absolute;
+    left: 40%;
+    color: #fff;
+    font-family: Arvo;
+    font-weight: bold;
+    text-shadow: -0.1vw -0.1vw 0 #222,
+    0.33vw -0.3vw 0 #222,
+    -0.3vw 0.3vw 0 #222,
+    0.3vw 0.3vw 0 #222,
+    0.4vw 0.4vw 0 #fff,
+    0.5vw 0.5vw 0 #fff,
+    0.6vw 0.6vw 0 #fff,
+    0.7vw 0.7vw 0 #fff;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    font-size: 3vw;
+}
+
+.wrapper1 {
+    position: absolute;
+    top: 210vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+
+}
+
+/* Style the Un-order list by setting its list-style to none */
+
+.wrapper1 ul {
+    list-style: none;
+}
+
+/* Style the list items inside the UL list, by setting its width, height and line-height 
+  and float them to left and set its border and border-radius.
+ */
+
+.wrapper1 ul li {
+    width: 10vw;
+    height: 10vw;
+    line-height: 10vw;
+    margin: 0 1vw;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 5px solid #D8E2DC;
+    float: left;
+    transition: all 0.5s ease;
+    font-size: 4vw;
+}
+
+/* Style the icons by setting its color and margin-top value to 20px 
+to align it properly */
+
+.wrapper1 ul li .fa {
+    color: #D8E2DC;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+/* Now target the specific li classes for styling and use box-shadow effect to border and text-shadow effect
+  to icons for glowing effect and use transition property for smooth transition effect. */
+
+/*facebook*/
+
+.wrapper1 ul li:hover.facebook {
+    border: 5px solid #3b5998;
+    box-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+}
+
+.wrapper1 ul li:hover .fa-facebook {
+    color: #3b5998;
+    text-shadow: 0 0 15px #3b5998;
+    transition: all 0.5s ease;
+}
+
+/*twitter*/
+
+.wrapper1 ul li:hover.twitter {
+    border: 5px solid #00aced;
+    box-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+}
+
+.wrapper1 ul li:hover .fa-twitter {
+    color: #00aced;
+    text-shadow: 0 0 15px #00aced;
+    transition: all 0.5s ease;
+}
+
+/* instagram */
+
+.wrapper1 ul li:hover.instagram {
+    border: 5px solid #bc2a8d;
+    box-shadow: 0 0 15px #bc2a8d;
+    transition: all 0.5s ease;
+}
+
+.wrapper1 ul li:hover .fa-instagram {
+    color: #bc2a8d;
+    text-shadow: 0 0 15px #bc2a8d;
+    transition: all 0.5s ease;
+}
+
+/* google */
+
+.wrapper1 ul li:hover.google {
+    border: 5px solid #dd4b39;
+    box-shadow: 0 0 15px #dd4b39;
+    transition: all 0.5s ease;
+}
+
+.wrapper1 ul li:hover .fa-google {
+    color: #dd4b39;
+    text-shadow: 0 0 15px #dd4b39;
+    transition: all 0.5s ease;
+}
+
+/* whatsapp */
+
+.wrapper1 ul li:hover.whatsapp {
+    border: 5px solid #4dc247;
+    box-shadow: 0 0 15px #4dc247;
+    transition: all 0.5s ease;
+}
+
+.wrapper1 ul li:hover .fa-whatsapp {
+    color: #4dc247;
+    text-shadow: 0 0 15px #4dc247;
+    transition: all 0.5s ease;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 640px) {
+    .wrapper1 {
+        width: 350px;
+    }
+    .wrapper1 ul li {
+        margin-top: 10px;
+    }
+    .wrapper1 ul li.google {
+        margin-left: 60px;
+    }
+}
+
+
+@media screen and (max-width: 340px) {
+    .wrapper1 {
+        width: 150px;
+    }
+    .wrapper1 ul li {
+        margin: 15px;
+    }
+    .wrapper1 ul li.google {
+        margin-left: 15px;
+    }
+}
+
+.footer p {
+    position: absolute;
+    right: 3vw;
+    left: 12vw;
+    top: 218vw;
+    color: floralwhite;
+    font-size: 1.8vw;
+    font-family: 'Aclonica';
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.cards {
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    width: 60vw;
+    margin: 20% auto 0;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #ccc;
+    border-radius: 4vw;
+    padding: 25vw;
+    box-shadow: 0 0 40px #000;
+    transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+    transform-origin: 0 0;
+    transition: transform 0.6s cubic-bezier(.8, .2, .1, 0.8) 0.1s,
+    background 0.4s linear;
+    top: -6vw;
+    cursor: pointer;
+    user-select: none;
+
+    :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.card--next {
+    z-index: 5;
+    transform: translateY(-2vw) rotate(4deg) translateX(2vw) scale(1);
+}
+
+.card--out {
+    animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+    transform: translateY(-5vw) rotate(8deg) translateX(5vw) scale(0.95);
+    z-index: 1;
+    background: #bbb;
+}
+
+@keyframes card-out {
+    0% {
+        z-index: 20;
+        transform: translateY(0px) rotate(-4deg);
+    }
+    50% {
+        transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+    }
+    80% {
+        z-index: 1;
+    }
+    100% {
+        transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+    }
+}
+
+.card--current {
+    cursor: auto;
+    user-select: auto;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+    background: #EEE;
+    transform: rotate(-1deg) translateX(0%) scale(1);
+}
+
+.card h1 {
+    margin: 0;
+    padding: 4vw;
+    top: 0vw;
+}
+
+.card p {
+    top: 5vw;
+    right: 3vw;
+}
